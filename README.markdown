@@ -1,3 +1,24 @@
+PHPUnit PHP 5.2
+---------------
+
+Add to your composer:
+
+	"require-dev": {
+		"phpunit/phpunit-php52": "dev-3.6.12-php52",
+		"phpunit/phpunit-mock-objects-php52": "dev-1.1.0-php52"
+	},
+	"repositories": [
+		{
+			"type": "git",
+			"url": "https://github.com/garex/phpunit"
+		},
+		{
+			"type": "git",
+			"url": "https://github.com/garex/phpunit-mock-objects"
+		}
+	]
+
+
 PHPUnit
 =======
 
@@ -18,8 +39,8 @@ Depending on your OS distribution and/or your PHP environment, you may need to i
 
 The following two commands (which you may have to run as `root`) are all that is required to install PHPUnit using the PEAR Installer:
 
-    pear config-set auto_discover 1
-    pear install pear.phpunit.de/PHPUnit
+	pear config-set auto_discover 1
+	pear install pear.phpunit.de/PHPUnit
 
 After the installation you can find the PHPUnit source files inside your local PEAR directory; the path is usually `/usr/lib/php/PHPUnit`.
 
@@ -51,31 +72,31 @@ Using PHPUnit From a Git Checkout
 
 The following commands can be used to perform the initial checkout of PHPUnit and its dependencies from Git:
 
-    mkdir phpunit && cd phpunit
-    git clone git://github.com/sebastianbergmann/phpunit.git
-    git clone git://github.com/sebastianbergmann/dbunit.git
-    git clone git://github.com/sebastianbergmann/php-file-iterator.git
-    git clone git://github.com/sebastianbergmann/php-text-template.git
-    git clone git://github.com/sebastianbergmann/php-code-coverage.git
-    git clone git://github.com/sebastianbergmann/php-token-stream.git
-    git clone git://github.com/sebastianbergmann/php-timer.git
-    git clone git://github.com/sebastianbergmann/phpunit-mock-objects.git
-    git clone git://github.com/sebastianbergmann/phpunit-selenium.git
-    git clone git://github.com/sebastianbergmann/phpunit-story.git
-    git clone git://github.com/sebastianbergmann/php-invoker.git
+	mkdir phpunit && cd phpunit
+	git clone git://github.com/sebastianbergmann/phpunit.git
+	git clone git://github.com/sebastianbergmann/dbunit.git
+	git clone git://github.com/sebastianbergmann/php-file-iterator.git
+	git clone git://github.com/sebastianbergmann/php-text-template.git
+	git clone git://github.com/sebastianbergmann/php-code-coverage.git
+	git clone git://github.com/sebastianbergmann/php-token-stream.git
+	git clone git://github.com/sebastianbergmann/php-timer.git
+	git clone git://github.com/sebastianbergmann/phpunit-mock-objects.git
+	git clone git://github.com/sebastianbergmann/phpunit-selenium.git
+	git clone git://github.com/sebastianbergmann/phpunit-story.git
+	git clone git://github.com/sebastianbergmann/php-invoker.git
 
 The `dbunit`, `php-code-coverage`, `php-file-iterator`, `php-text-template`, `php-timer`, `php-token-stream`, `phpunit`, `phpunit-mock-objects`, `phpunit-selenium`, `phpunit-story`, and `php-invoker` directories need to be added to the `include_path`.
 
 In addition to the checkouts listed above, the YAML component that is provided by the Symfony project is required:
 
-    pear install pear.symfony-project.com/YAML
+	pear install pear.symfony-project.com/YAML
 
 The `phpunit/phpunit.php` script can be used to invoke the PHPUnit test runner.
 
 The following commands can be used to check out the appropriate branches for PHPUnit 3.6:
 
-    cd phpunit && git checkout 3.6 && cd ..
-    cd dbunit && git checkout 1.1 && cd ..
-    cd php-code-coverage && git checkout 1.1 && cd ..
-    cd phpunit-mock-objects && git checkout 1.1 && cd ..
-    cd phpunit-selenium && git checkout 1.1 && cd ..
+	cd phpunit && git checkout 3.6 && cd ..
+	cd dbunit && git checkout 1.1 && cd ..
+	cd php-code-coverage && git checkout 1.1 && cd ..
+	cd phpunit-mock-objects && git checkout 1.1 && cd ..
+	cd phpunit-selenium && git checkout 1.1 && cd ..
