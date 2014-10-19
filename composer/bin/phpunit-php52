@@ -3,6 +3,6 @@
 define('PHPUnit_MAIN_METHOD', 'PHPUnit_TextUI_Command::main');
 
 // pull in vendor/autoload.php as defined by composer
-require __DIR__ .'/../../../../autoload_52.php';
+require dirname(__FILE__) .'/../../../../autoload_52.php';
 
 PHPUnit_TextUI_Command::main();
