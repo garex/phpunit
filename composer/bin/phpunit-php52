@@ -18,6 +18,7 @@ if (!function_exists('stream_resolve_include_path')) {
         $paths = PATH_SEPARATOR == ':' ?
             preg_split('#(?<!phar):#', get_include_path()) :
             explode(PATH_SEPARATOR, get_include_path());
+	$paths[] = '';
         foreach ($paths as $prefix) {
             $ds = substr($prefix, -1) == DIRECTORY_SEPARATOR ? '' : DIRECTORY_SEPARATOR;
             $file = $prefix . $ds . $filename;
