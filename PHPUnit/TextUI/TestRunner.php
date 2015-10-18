@@ -332,16 +332,6 @@ class PHPUnit_TextUI_TestRunner extends PHPUnit_Runner_BaseTestRunner
         }
 
         if (isset($codeCoverage)) {
-            $title = '';
-
-            if (isset($arguments['configuration'])) {
-                $loggingConfiguration = $arguments['configuration']->getLoggingConfiguration();
-
-                if (isset($loggingConfiguration['title'])) {
-                    $title = $loggingConfiguration['title'];
-                }
-            }
-
             if (isset($arguments['coverageClover'])) {
                 $this->printer->write(
                   "\nGenerating code coverage report in Clover XML format ..."
@@ -360,9 +350,7 @@ class PHPUnit_TextUI_TestRunner extends PHPUnit_Runner_BaseTestRunner
                 );
 
                 $writer = new PHP_CodeCoverage_Report_HTML(
-                  $title,
                   $arguments['reportCharset'],
-                  $arguments['reportYUI'],
                   $arguments['reportHighlight'],
                   $arguments['reportLowUpperBound'],
                   $arguments['reportHighLowerBound'],
@@ -402,7 +390,6 @@ class PHPUnit_TextUI_TestRunner extends PHPUnit_Runner_BaseTestRunner
 
                 $writer = new PHP_CodeCoverage_Report_Text(
                   $outputStream,
-                  $title,
                   $arguments['reportLowUpperBound'],
                   $arguments['reportHighLowerBound'],
                   $arguments['coverageTextShowUncoveredFiles']
